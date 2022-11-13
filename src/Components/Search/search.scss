@@ -1,4 +1,5 @@
 .container {
+    
     .search-title{
         font-size: 30px;
         span{
@@ -7,15 +8,15 @@
         }
     }
   .input {
-    width: 624px;
-    height: 56px;
+    width: 550px;
+    height: 50px;
     border-radius: 20px;
     margin: 20px 0;
     font-family: "Work Sans";
-    background-color: whitesmoke;
+    background-color:  #E5E5E5;
     font-size: 20px;
     border: 1px solid #545f7d;
-    padding: 0 10px;
+    padding: 0 15px;
   }
   .table-title-wraper{
     .table-title{

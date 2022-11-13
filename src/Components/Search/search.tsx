@@ -29,7 +29,7 @@ function Search({ CHAR }:any) {
     <div className="container">
         <Header/>
       <h1 className="search-title">Serach for <span>Character</span></h1>
-
+      <div>
       <input
         type="text"
         value={name}
@@ -38,6 +38,7 @@ function Search({ CHAR }:any) {
         placeholder="search"
       />
 
+      </div>
       <div className="user-list">
         {foundCHAR && foundCHAR.length > 0 ? (
           foundCHAR.map((character: any) => (
@@ -47,7 +48,7 @@ function Search({ CHAR }:any) {
                   <tr className="title">
                     <th scope="col">Name</th>
                     <th scope="col">Date </th>
-                    <th scope="col">Gender</th>
+                    <th scope="col">Publishers</th>
                   </tr>
                 </thead>
                 <tbody>
