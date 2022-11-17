@@ -1,14 +1,31 @@
 .book-container{
     display: flex;
-    padding: 15px 20px;
     justify-content: space-around;
     align-items: center;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #333333;
+
+    > p {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
 }
 .title{
     display: flex;
     font-family: "Work Sans";
-    padding: 10px 20px;
-    margin: 20px 0;
+    max-width: 1350px;
+    margin: 20px auto;
     justify-content: space-around;
     align-items: center;
+    text-transform: uppercase;
+    padding: 0 2rem;
+    
+
+    > h3 {
+        flex-grow: 1;
+        flex-basis: 0;
+        
+    }
 }

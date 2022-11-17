@@ -1,33 +1,27 @@
 .container {
-    
-    .search-title{
-        font-size: 30px;
-        span{
-            color: cyan;
-            font-size: 25px;
-        }
+  .search-title {
+    font-size: 30px;
+    text-align: center;
+    span {
+      color: cyan;
+      font-size: 30px;
     }
-  .input {
-    width: 550px;
-    height: 50px;
-    border-radius: 20px;
-    margin: 20px 0;
+  }
+  .input-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin: 3em auto;
+    max-width: 1240px;
+  }
+  button.search-button {
+    display: block;
+    width: 12rem;
+    height: 2rem;
+    margin: 2em auto;
+    background-color: rgb(46, 43, 43);
+    color: #fff;
     font-family: "Work Sans";
-    background-color:  #E5E5E5;
-    font-size: 20px;
-    border: 1px solid #545f7d;
-    padding: 0 15px;
+    font-size: 16px;
   }
-  .table-title-wraper{
-    .table-title{
-        display: flex;
-        justify-content: space-around;
-  
-        // .title{
-        
-        // }
-        
-    }
-  }
-  
 }

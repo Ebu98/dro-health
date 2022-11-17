@@ -44,3 +44,59 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+
+
+
+## Table of Contents
+1. General Info
+2. Technologies
+3. Installation
+
+
+## Technologies
+React: Version 18.2.0
+
+Library name:
+
+1. Axios: Version 1.1.2
+2. react-select: Version 5.6.0
+3. React-router-dom: Version 6.4.2
+4. React testing labray: jest
+
+## Installation
+Side information: To use the application in a special environment use below steps to start it
+
+1. git clone https://github.com/Ebu98/lendsqr-fe-test.git
+2. cd dro-health
+3. npm install (The command to install the dependencies )
+4. npm start
+
+## FAQs
+A list of frequently asked questions
+
+1. HOW DO I USE THE APPLICATION MY LOCAL MACHINE
+2. HOW WILL ACCESS THE PAGES ON THE HOSTED VERSION OF THE APPLICATION
+
+For the first question
+
+. When you follow the above installation process and successfully clone the project to local machine
+. The first page that will display is login page
+. Type in the login credentials(email and password)
+. It will automatically take you to the users page where you will see the list of all the users
+. Finally to navigate to details page you type the path name (/users/detail) 
+
+
+Second question
+
+When you open the link below
+https://lendsqr-fe.netlify.app
+
+. The first page that will display is login page
+. Type in the login credentials(email and password)
+. It will automatically take you to the users page where you will see the list of all the users
+
+Then click on the dashboard on the the sidebar to take you the details page
