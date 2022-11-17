@@ -46,10 +46,42 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 
+## STARTING FROM WHERE BELOW:
 
 
 
+## Introducton
+For this assignment, you are required to create a book inventory application using ANAPIOFICEANDFIRE API, in ReactJS (Typescript).
 
+## What to implement
+
+# First Question
+
+Use the Ice and Fire API to enable the user to see a list of books available on the platform.
+
+Your List UI should have the following. 
+
+1.Publisher
+2.Name
+3.ISBN
+4.Authors
+5.End Date
+
+
+# Second Question
+
+We want to be able to search for a book using the following parameters.
+
+1.Publisher
+2.Name
+3.ISBN
+4.Authors
+5.End Date
+Characters Name
+Character Culture
+
+Which the api for all books those not contain Characters Name
+Character Culture
 
 ## Table of Contents
 1. General Info
@@ -70,9 +102,9 @@ Library name:
 ## Installation
 Side information: To use the application in a special environment use below steps to start it
 
-1. git clone https://github.com/Ebu98/lendsqr-fe-test.git
+1. git clone https://github.com/Ebu98/dro-health.git
 2. cd dro-health
-3. npm install (The command to install the dependencies )
+3. npm install (The command to install all the dependencies )
 4. npm start
 
 ## FAQs
@@ -83,20 +115,16 @@ A list of frequently asked questions
 
 For the first question
 
-. When you follow the above installation process and successfully clone the project to local machine
-. The first page that will display is login page
-. Type in the login credentials(email and password)
-. It will automatically take you to the users page where you will see the list of all the users
-. Finally to navigate to details page you type the path name (/users/detail) 
+. When you follow the above installation process and successfully clone the project on your local machine
+. The first page that will display is all book page
 
 
 Second question
 
-When you open the link below
-https://lendsqr-fe.netlify.app
+. The first page that will display is all book page
+. And using the search input you search for a particular book by any of the parameters below:
+2.Name
+3.ISBN
+4.Authors
+5.End Date
 
-. The first page that will display is login page
-. Type in the login credentials(email and password)
-. It will automatically take you to the users page where you will see the list of all the users
-
-Then click on the dashboard on the the sidebar to take you the details page

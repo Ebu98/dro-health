@@ -1,34 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Header/Header";
 import Select from "react-select";
 
 import "./search.scss";
 
 function Search({ books }: any) {
-  // const [name, setName] = useState("");
-  // const [error, setError] = useState(null);
-  // const [isLoaded, setIsLoaded] = useState(false);
-  // const [characters, setCharacters] = useState<any[]>([]);
+  const [name, setName] = useState("");
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [characters, setCharacters] = useState<any[]>([]);
 
-  // const filter = (value: string) => {
-  //   const keyword = value;
+  const filter = (value: string) => {
+    const keyword = value;
 
-  //   if (keyword !== "") {
-  //     const results = characters.filter((character: any) => {
-  //       return (
-  //         character.name?.toLowerCase().startsWith(keyword.toLowerCase()) ||
-  //         character.publisher
-  //           ?.toLowerCase()
-  //           .startsWith(keyword.toLowerCase()) ||
-  //         character.isbn?.toLowerCase().startsWith(keyword.toLowerCase()) ||
-  //         character.authors?.toLowerCase().startsWith(keyword.toLowerCase()) ||
-  //         character.released?.toLowerCase().startsWith(keyword.toLowerCase())
-  //       );
-  //     });
-  //     // setCharacters(results);
-  //   }
-  //   setName(keyword);
-  // };
+    if (keyword !== "") {
+      const results = characters.filter((character: any) => {
+        return (
+          character.name?.toLowerCase().startsWith(keyword.toLowerCase()) ||
+          character.publisher
+            ?.toLowerCase()
+            .startsWith(keyword.toLowerCase()) ||
+          character.isbn?.toLowerCase().startsWith(keyword.toLowerCase()) ||
+          character.authors?.toLowerCase().startsWith(keyword.toLowerCase()) ||
+          character.released?.toLowerCase().startsWith(keyword.toLowerCase())
+        );
+      });
+      setCharacters(results);
+    }
+    setName(keyword);
+  };
 
   const getData = (data: any, property: string) => {
     const arr =
@@ -55,12 +55,15 @@ function Search({ books }: any) {
     label: isbn,
     value: isbn,
   }));
-  
-  
+
   const optionsReleased = getData(books, "released").map((released) => ({
     label: released,
     value: released,
   }));
+
+  const handleSubmit = ({ event }: any) => {
+    event.preventDefault();
+  };
 
   return (
     <div className="container">
@@ -72,15 +75,33 @@ function Search({ books }: any) {
         <Select
           placeholder="Authors"
           options={optionsAuthors}
-          // onChange={(selected) => filter(selected?.value || "")}
+          onChange={(selected) => filter((selected?.value as string) || "")}
         />
-        <Select options={optionsisbn}  placeholder="Isbn"/>
-        <Select options={optionsName}  placeholder="Name"/>
-        <Select options={optionspublisher}  placeholder="Publisher"/>
+        <Select
+          options={optionsisbn}
+          placeholder="Isbn"
+          onChange={(selected) => filter((selected?.value as any) || "")}
+        />
+        <Select
+          options={optionsName}
+          placeholder="Name"
+          onChange={(selected) => filter(selected?.value as string)}
+        />
+        <Select
+          options={optionspublisher}
+          placeholder="Publisher"
+          onChange={(selected) => filter((selected?.value as string) || "")}
+        />
 
-        <Select options={optionsReleased}  placeholder="Released"/>
+        <Select
+          options={optionsReleased}
+          placeholder="Released"
+          onChange={(selected) => filter((selected?.value as any) || "")}
+        />
       </div>
-      <button className="search-button">Search</button>
+      <button className="search-button" onClick={handleSubmit}>
+        Search
+      </button>
     </div>
   );
 }
