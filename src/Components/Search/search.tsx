@@ -61,9 +61,7 @@ function Search({ books }: any) {
     value: released,
   }));
 
-  const handleSubmit = ({ event }: any) => {
-    event.preventDefault();
-  };
+  const handleSubmit = books.filter()
 
   return (
     <div className="container">
@@ -76,7 +74,9 @@ function Search({ books }: any) {
           placeholder="Authors"
           options={optionsAuthors}
           onChange={(selected) => filter((selected?.value as string) || "")}
+          
         />
+        
         <Select
           options={optionsisbn}
           placeholder="Isbn"
