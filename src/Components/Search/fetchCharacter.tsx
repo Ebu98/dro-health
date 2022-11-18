@@ -1,10 +1,10 @@
 import React from "react";
 import Search from "./search";
 
-const Fetch = ({books}:any) => {
+const Fetch = ({books, handleFilter}:any) => {
 
   return (
-      <Search books={books}/>
+      <Search books={books} handleFilter={handleFilter}/>
   );
 };
 

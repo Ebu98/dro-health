@@ -4,31 +4,7 @@ import Select from "react-select";
 
 import "./search.scss";
 
-function Search({ books }: any) {
-  const [name, setName] = useState("");
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [characters, setCharacters] = useState<any[]>([]);
-
-  const filter = (value: string) => {
-    const keyword = value;
-
-    if (keyword !== "") {
-      const results = characters.filter((character: any) => {
-        return (
-          character.name?.toLowerCase().startsWith(keyword.toLowerCase()) ||
-          character.publisher
-            ?.toLowerCase()
-            .startsWith(keyword.toLowerCase()) ||
-          character.isbn?.toLowerCase().startsWith(keyword.toLowerCase()) ||
-          character.authors?.toLowerCase().startsWith(keyword.toLowerCase()) ||
-          character.released?.toLowerCase().startsWith(keyword.toLowerCase())
-        );
-      });
-      setCharacters(results);
-    }
-    setName(keyword);
-  };
+function Search({ books, handleFilter }: any) {
 
   const getData = (data: any, property: string) => {
     const arr =
@@ -59,9 +35,7 @@ function Search({ books }: any) {
   const optionsReleased = getData(books, "released").map((released) => ({
     label: released,
     value: released,
-  }));
-
-  const handleSubmit = books.filter()
+  }))
 
   return (
     <div className="container">
@@ -73,35 +47,35 @@ function Search({ books }: any) {
         <Select
           placeholder="Authors"
           options={optionsAuthors}
-          onChange={(selected) => filter((selected?.value as string) || "")}
+          onChange={(selected) => handleFilter('authors', selected?.value)}
           
         />
         
         <Select
           options={optionsisbn}
           placeholder="Isbn"
-          onChange={(selected) => filter((selected?.value as any) || "")}
+          onChange={(selected) => handleFilter('isbn', selected?.value)}
         />
         <Select
           options={optionsName}
           placeholder="Name"
-          onChange={(selected) => filter(selected?.value as string)}
+          onChange={(selected) => handleFilter('name', selected?.value)}
         />
         <Select
           options={optionspublisher}
           placeholder="Publisher"
-          onChange={(selected) => filter((selected?.value as string) || "")}
+          onChange={(selected) => handleFilter('publisher', selected?.value)}
         />
 
         <Select
           options={optionsReleased}
-          placeholder="Released"
-          onChange={(selected) => filter((selected?.value as any) || "")}
+          placeholder="End Date"
+          onChange={(selected) => handleFilter('endDate', selected?.value)}
         />
       </div>
-      <button className="search-button" onClick={handleSubmit}>
+      {/* <button className="search-button" onClick={handleSubmit}>
         Search
-      </button>
+      </button> */}
     </div>
   );
 }

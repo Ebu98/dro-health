@@ -7,6 +7,15 @@ import "./App.css";
 function App() {
   const [books, setBooks] = useState([]);
   const [characters, setCharacters] = useState<any[]>([]);
+  const [filter, setFilter] = useState({
+    publisher: '',
+    name: '',
+    isbn: '',
+    authors: '',
+    endDate: ''
+  })
+
+  const handleFilter = (name: string, value: string) => setFilter({ ...filter, [name]: value})
 
   const fetchBooksData = () => {
     axios
@@ -33,8 +42,8 @@ function App() {
 
   return (
     <div className="App">
-      <Fetch books={books}/>
-      <BookList books={books} />
+      <Fetch books={books} handleFilter={handleFilter}/>
+      <BookList books={books} filter={filter} />
     </div>
   );
 }

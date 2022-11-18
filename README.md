@@ -128,3 +128,8 @@ Second question
 4.Authors
 5.End Date
 
+## How to run test:
+
+Type the command below:
+
+npm test
