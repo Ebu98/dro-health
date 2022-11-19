@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../Header/Header";
 import Select from "react-select";
 
 import "./search.scss";
 
 function Search({ books, handleFilter }: any) {
-
   const getData = (data: any, property: string) => {
     const arr =
       data?.map((item: any) =>
@@ -35,7 +34,7 @@ function Search({ books, handleFilter }: any) {
   const optionsReleased = getData(books, "released").map((released) => ({
     label: released,
     value: released,
-  }))
+  }));
 
   return (
     <div className="container">
@@ -47,35 +46,31 @@ function Search({ books, handleFilter }: any) {
         <Select
           placeholder="Authors"
           options={optionsAuthors}
-          onChange={(selected) => handleFilter('authors', selected?.value)}
-          
+          onChange={(selected) => handleFilter("authors", selected?.value)}
         />
-        
+
         <Select
           options={optionsisbn}
           placeholder="Isbn"
-          onChange={(selected) => handleFilter('isbn', selected?.value)}
+          onChange={(selected) => handleFilter("isbn", selected?.value)}
         />
         <Select
           options={optionsName}
           placeholder="Name"
-          onChange={(selected) => handleFilter('name', selected?.value)}
+          onChange={(selected) => handleFilter("name", selected?.value)}
         />
         <Select
           options={optionspublisher}
           placeholder="Publisher"
-          onChange={(selected) => handleFilter('publisher', selected?.value)}
+          onChange={(selected) => handleFilter("publisher", selected?.value)}
         />
 
         <Select
           options={optionsReleased}
           placeholder="End Date"
-          onChange={(selected) => handleFilter('endDate', selected?.value)}
+          onChange={(selected) => handleFilter("endDate", selected?.value)}
         />
       </div>
-      {/* <button className="search-button" onClick={handleSubmit}>
-        Search
-      </button> */}
     </div>
   );
 }

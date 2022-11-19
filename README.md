@@ -128,6 +128,13 @@ Second question
 4.Authors
 5.End Date
 
+Third Question
+
+Fetch All Characters
+
+1. The first page that will display is all book page
+2. Click characterlist button
+
 ## How to run test:
 
 Type the command below:
