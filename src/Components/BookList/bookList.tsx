@@ -20,7 +20,9 @@ const BookList = ({ books, filter }: any) => {
             filter.authors ? book.authors.startsWith(filter.authors) : true
           )
           .filter((book: any) =>
-            filter.publisher ? book.publisher.startsWith(filter.publisher) : true
+            filter.publisher
+              ? book.publisher.startsWith(filter.publisher)
+              : true
           )
           .filter((book: any) =>
             filter.isbn ? book.isbn.startsWith(filter.isbn) : true
@@ -45,3 +47,4 @@ const BookList = ({ books, filter }: any) => {
 };
 
 export default BookList;
+// https://meet.google.com/mks-uyhf-jah

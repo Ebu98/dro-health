@@ -1,18 +1,14 @@
 import React from "react";
 
-import {Route, Routes} from "react-router";
-// import CharacterList from "../Components/Characters/characterList";
+import { Route, Routes } from "react-router";
 import Char from "../Page/characterPage";
 import Main from "../Page/main";
 
-
 const App = () => (
-    <Routes>
-      <Route path="/" element={< Main/>} />
-      <Route path="/char" element={<Char />} />
+  <Routes>
+    <Route path="/" element={<Main />} />
+    <Route path="/char" element={<Char />} />
+  </Routes>
+);
 
-      </Routes>
-
-      )
-
-    export default App;
+export default App;
